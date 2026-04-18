@@ -93,8 +93,11 @@ export default function App() {
               <a href="#blog" className="text-sm font-medium text-text-secondary hover:text-primary transition-colors">Blog</a>
             </nav>
 
-            <div className="hidden lg:flex items-center gap-4">
-              <Button variant="outline" className="font-medium">Best Deals</Button>
+            <div className="hidden lg:flex items-center justify-end w-[148px]">
+              <Button variant="outline" size="sm" className="gap-2">
+                <Globe className="w-4 h-4" />
+                English
+              </Button>
             </div>
 
             {/* Mobile Menu Button */}
@@ -124,7 +127,11 @@ export default function App() {
                 <a href="#compare" onClick={() => setMobileMenuOpen(false)} className="text-base font-medium text-text-secondary">Compare</a>
                 <a href="#guides" onClick={() => setMobileMenuOpen(false)} className="text-base font-medium text-text-secondary">Guides</a>
                 <a href="#blog" onClick={() => setMobileMenuOpen(false)} className="text-base font-medium text-text-secondary">Blog</a>
-                <Button variant="outline" className="w-full justify-center">Best Deals</Button>
+                <a href="#compare" onClick={() => setMobileMenuOpen(false)} aria-label="See top VPN deals and compare plans">
+                  <Button variant="gradient" className="w-full justify-center gap-1.5">
+                    See Top Deals <ChevronRight className="w-4 h-4" />
+                  </Button>
+                </a>
               </nav>
             </motion.div>
           )}
