@@ -6,8 +6,6 @@ export const vpnData = [
     reviews: "12,500",
     price: 6.67,
     features: ["Fastest speeds", "94 countries", "24/7 support"],
-    editorsChoice: true,
-    bestValue: false,
     color: "bg-red-100 text-red-600",
   },
   {
@@ -17,8 +15,6 @@ export const vpnData = [
     reviews: "18,300",
     price: 3.99,
     features: ["Best security", "60 countries", "Threat Protection"],
-    editorsChoice: false,
-    bestValue: true,
     color: "bg-blue-100 text-blue-600",
   },
   {
@@ -28,8 +24,6 @@ export const vpnData = [
     reviews: "8,900",
     price: 2.49,
     features: ["Unlimited devices", "100 countries", "CleanWeb"],
-    editorsChoice: false,
-    bestValue: false,
     color: "bg-teal-100 text-teal-600",
   },
   {
@@ -39,8 +33,6 @@ export const vpnData = [
     reviews: "9,200",
     price: 2.19,
     features: ["Streaming optimized", "91 countries", "45-day refund"],
-    editorsChoice: false,
-    bestValue: false,
     color: "bg-yellow-100 text-yellow-600",
   },
   {
@@ -50,8 +42,6 @@ export const vpnData = [
     reviews: "6,500",
     price: 4.99,
     features: ["Swiss privacy", "60+ countries", "Secure Core"],
-    editorsChoice: false,
-    bestValue: false,
     color: "bg-purple-100 text-purple-600",
   }
 ];

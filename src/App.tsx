@@ -263,19 +263,20 @@ export default function App() {
                   transition={{ delay: idx * 0.1 }}
                 >
                   <Card className="h-full flex flex-col relative transition-all duration-200 hover:shadow-lg hover:border-gray-200 overflow-hidden">
-                    {vpn.editorsChoice && (
+                    {vpn.id === "expressvpn" && (
                       <div className="absolute top-0 inset-x-0 h-1 bg-highlight"></div>
                     )}
-                    {vpn.bestValue && (
+                    {vpn.id === "nordvpn" && (
                        <div className="absolute top-0 inset-x-0 h-1 bg-primary"></div>
+                    )}
+                    {vpn.id === "surfshark" && (
+                       <div className="absolute top-0 inset-x-0 h-1 bg-teal-500"></div>
                     )}
                     <CardHeader className="pb-4">
                       <div className="flex justify-between items-start mb-4">
                         <div className={cn("w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold", vpn.color)}>
                           {vpn.name.charAt(0)}
                         </div>
-                        {/* {vpn.editorsChoice && <Badge variant="default" className="text-[10px] uppercase">Editor's Choice</Badge>}
-                        {vpn.bestValue && <Badge variant="highlight" className="text-[10px] uppercase">Best Value</Badge>} */}
                       </div>
                       <h3 className="text-2xl font-bold">{vpn.name}</h3>
                       <StarRating rating={vpn.rating} count={vpn.reviews} />
@@ -295,7 +296,7 @@ export default function App() {
                       </div>
                     </CardContent>
                     <CardFooter>
-                      <Button variant={vpn.editorsChoice ? "gradient" : "outline"} className="w-full">
+                      <Button variant={"outline"} className="w-full">
                         Visit {vpn.name} <ChevronRight className="w-4 h-4 ml-1" />
                       </Button>
                     </CardFooter>
@@ -329,7 +330,7 @@ export default function App() {
                     {vpnData.map(vpn => (
                       <th key={vpn.id} className={cn("px-6 py-6 text-center w-[15%]", vpn.id === "expressvpn" && "bg-blue-50/50")}>
                         <div className="font-bold text-lg text-text-primary">{vpn.name}</div>
-                        {vpn.editorsChoice && <Badge variant="default" className="mt-2 text-[10px] scale-90">Best Overall</Badge>}
+                        {vpn.id === "expressvpn" && <Badge variant="default" className="mt-2 text-[10px] scale-90">Best Overall</Badge>}
                       </th>
                     ))}
                   </tr>
@@ -349,7 +350,7 @@ export default function App() {
                      <td className="px-6 py-6 font-medium text-text-primary"></td>
                      {vpnData.map(vpn => (
                         <td key={`${vpn.id}-cta`} className={cn("px-6 py-6 text-center", vpn.id === "expressvpn" && "bg-blue-50/50")}>
-                           <Button variant={vpn.editorsChoice ? "default" : "outline"} size="sm" className="w-full">Get {vpn.name}</Button>
+                           <Button variant={vpn.id === "expressvpn" ? "default" : "outline"} size="sm" className="w-full">Get {vpn.name}</Button>
                         </td>
                       ))}
                   </tr>
@@ -360,11 +361,11 @@ export default function App() {
             {/* Mobile Cards */}
             <div className="lg:hidden space-y-6">
               {vpnData.map((vpn) => (
-                <Card key={`mobile-${vpn.id}`} className={cn(vpn.editorsChoice && "ring-2 ring-primary border-transparent")}>
+                <Card key={`mobile-${vpn.id}`} className={cn(vpn.id === "expressvpn" && "ring-2 ring-primary border-transparent")}>
                   <CardHeader className="bg-gray-50/50 border-b border-gray-100 pb-4">
                      <div className="flex justify-between items-center mb-2">
                         <h3 className="text-xl font-bold">{vpn.name}</h3>
-                        {vpn.editorsChoice && <Badge variant="default">Best Overall</Badge>}
+                        {vpn.id === "expressvpn" && <Badge variant="default">Best Overall</Badge>}
                      </div>
                      <div className="text-3xl font-extrabold">${vpn.price}<span className="text-sm font-normal text-text-secondary">/mo</span></div>
                   </CardHeader>
@@ -379,7 +380,7 @@ export default function App() {
                      </ul>
                   </CardContent>
                   <CardFooter className="pt-4 border-t border-gray-100 bg-gray-50/50">
-                     <Button variant={vpn.editorsChoice ? "default" : "outline"} className="w-full">Get {vpn.name}</Button>
+                     <Button variant={vpn.id === "expressvpn" ? "default" : "outline"} className="w-full">Get {vpn.name}</Button>
                   </CardFooter>
                 </Card>
               ))}
